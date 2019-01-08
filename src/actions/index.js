@@ -20,11 +20,12 @@ export const getArtists = () => {
 export const removeArtist = (id) => {
   return (dispatch) => {
     axios.delete(`http://localhost:5000/artists/${id}`)
-    .then(res => {
-      dispatch({
-        type: REMOVE_ARTIST,
-        payload: id
-      })
+      .then(res => {
+        dispatch(getArtists())
+      // dispatch({
+      //   type: REMOVE_ARTIST,
+      //   payload: id
+      // })
     }).catch(err => console.log(err))
   }
 }
