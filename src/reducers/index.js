@@ -1,4 +1,4 @@
-import { REMOVE_ARTIST } from '../actions'
+import { REMOVE_ARTIST, GET_ARTIST } from '../actions'
 
 const init = [
   { id: 1, name: 'Drake', genre: 'hip-hop' },
@@ -9,6 +9,9 @@ const init = [
 export default function songs(state = init, { type, payload }) {
 
   switch (type) {
+
+    case GET_ARTIST:
+      return payload
 
     case REMOVE_ARTIST:
       return [...state.filter(artist => artist.id !== payload)]
