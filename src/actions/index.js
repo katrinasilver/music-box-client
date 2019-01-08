@@ -2,9 +2,12 @@ export const ADD_ARTIST = 'ADD_ARTIST'
 export const REMOVE_ARTIST = 'REMOVE_ARTIST'
 
 export const removeArtist = (id) => {
+  return (dispatch) => {
 
-  return {
-    type: REMOVE_ARTIST,
-    payload: id
+    dispatch({
+      type: REMOVE_ARTIST,
+      payload: id
+    })
+
   }
 }
